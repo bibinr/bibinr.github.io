@@ -1,38 +1,44 @@
 document.getElementById('revealBtn').addEventListener('click', function() {
-    this.remove(); // Remove the button after click
+    this.remove(); // Remove the reveal button
 
-    // Create balloon with string
-    let balloonContainer = document.createElement('div');
-    balloonContainer.className = 'balloon-container';
-    document.body.appendChild(balloonContainer);
+    // Function to generate a random number within a range
+    const randomInRange = (min, max) => Math.random() * (max - min) + min;
 
-    let balloon = document.createElement('div');
-    balloon.className = 'balloon';
-    balloonContainer.appendChild(balloon);
+    // Balloon colors
+    const colors = ['#FF69B4', '#87CEEB']; // Pink and Blue
 
-    let tringle = document.createElement('div');
-    tringle.className = 'tringle';
-    balloonContainer.appendChild(tringle);
+    for (let i = 0; i < 5; i++) { // Create 5 balloons
+        let balloonContainer = document.createElement('div');
+        balloonContainer.className = 'balloon-container';
+        balloonContainer.style.left = `${randomInRange(10, 90)}vw`;
+        balloonContainer.style.top = `${randomInRange(10, 90)}vh`;
 
-    let string = document.createElement('div');
-    string.className = 'string';
-    balloonContainer.appendChild(string);
+        let balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; // Assign random color
+        balloonContainer.appendChild(balloon);
 
-    // Balloon click event
-    balloon.addEventListener('click', function() {
-        // Trigger slow-motion confetti
-        confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 },
-            colors: ['#add8e6', '#87CEEB', '#1E90FF'],
-            scalar: 1.5, // Make confetti larger
-            startVelocity: 30, // Slow motion effect
-            ticks: 200, // Longer-lasting confetti
-        });
+        let tringle = document.createElement('div');
+        tringle.className = 'tringle';
+        balloonContainer.appendChild(tringle);
 
-        setTimeout(() => {
-            balloonContainer.innerHTML = '<h1>It\'s a Boy!</h1>'; // Replace the balloon with the message
-        }, 1500); // Delay to show slow-motion confetti before revealing the message
-    });
+        let string = document.createElement('div');
+        string.className = 'string';
+        balloonContainer.appendChild(string);
+
+        document.body.appendChild(balloonContainer);
+
+        // Randomize floating direction and speed
+        let keyframes = [
+            { transform: `translate(0, 0)` },
+            { transform: `translate(${randomInRange(-100, 100)}vw, ${randomInRange(-100, 100)}vh)` }
+        ];
+        let options = {
+            duration: randomInRange(5000, 10000), // between 5 and 10 seconds
+            iterations: Infinity,
+            direction: 'alternate',
+            easing: 'ease-in-out'
+        };
+        balloonContainer.animate(keyframes, options);
+    }
 });
