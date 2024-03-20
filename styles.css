@@ -16,6 +16,7 @@ body, html {
     align-items: center;
     font-family: 'Roboto', sans-serif;
     overflow: hidden; /* Prevent scrolling */
+    position: relative; /* Ensure positioning context */
 }
 
 h1 {
@@ -26,8 +27,8 @@ h1 {
 
 .balloon-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
+/*     top: 50%;
+    left: 50%; */
     transform: translate(-50%, -50%);
     animation: floatAround 20s linear infinite; /* Adjusted to ensure it starts correctly */
     cursor: url('pin.png'), auto; /* Adjust according to your actual cursor image path */
@@ -36,7 +37,7 @@ h1 {
 .balloon {
     width: 150px; /* Larger balloon */
     height: 200px;
-    background-color: #FF69B4; /* Adjusted balloon color */
+/*     background-color: #FF69B4; */ 
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
     position: relative;
     animation: float 2s ease-in-out infinite; /* Smooth floating animation */
@@ -69,15 +70,15 @@ h1 {
     border-right: 10px solid transparent;
     border-top: 20px solid #FF69B4; /* Matching tringle color with balloon */
     position: absolute;
-    left: 70px; /* Centered below the balloon */
-    top: 200px;
+    left: 45px; /* Adjust based on balloon width */
+    top: 130px;
 }
 
 .string {
     width: 2px;
-    height: 100px; /* Longer string */
+    height: 50px; /* Adjust string length as needed */
     background-color: #555;
     position: absolute;
-    left: 74px; /* Centered below the balloon */
-    top: 220px;
+    left: 49px; /* Center below the balloon */
+    top: 140px;
 }
