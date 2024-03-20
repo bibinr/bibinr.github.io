@@ -1,11 +1,5 @@
-body {
+body, h1 {
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f8ff;
     text-align: center; /* Center align all text */
 }
 
@@ -17,20 +11,20 @@ body {
     cursor: pointer;
     border-radius: 5px;
     color: white;
-    margin-bottom: 20px; /* Add some space above the balloon */
 }
 
 .balloon-container {
+    cursor: url('pin.png'), auto; /* Pin cursor, ensure 'pin.png' is a valid image URL */
     position: relative;
-    width: 200px; /* Increased size */
-    height: 280px; /* Increased size */
-    margin: auto;
+    width: 150px; /* Increased size */
+    height: 210px;
+    margin: 20px auto;
 }
 
 .balloon {
-    width: 200px; /* Increased size */
-    height: 260px; /* Increased size */
-    background-color: #87CEEB; /* Lighter blue */
+    width: 150px; /* Increased size */
+    height: 195px;
+    background-color: #FF69B4; /* New balloon color */
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
     position: absolute;
     top: 0;
@@ -38,7 +32,17 @@ body {
     animation: float 2s infinite ease-in-out;
 }
 
-h1 {
-    font-size: 32px; /* Bigger text */
+.tringle {
+    border-top: 15px solid #FF69B4; /* Adjusted for new balloon size */
+}
+
+.string {
+    height: 100px; /* Adjusted for new balloon size */
+}
+
+/* Center the reveal message more effectively */
+.balloon h1 {
     color: #1E90FF;
+    font-size: 24px; /* Bigger text */
+    padding-top: 60px; /* Adjust padding for larger balloon */
 }
