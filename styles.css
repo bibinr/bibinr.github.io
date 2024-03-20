@@ -21,3 +21,50 @@ body {
     color: white;
 }
 
+
+.balloon-container {
+    position: relative;
+    width: 100px;
+    height: 140px;
+    margin: auto;
+}
+
+.balloon {
+    width: 100px;
+    height: 130px;
+    background-color: #1E90FF;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.tringle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #1E90FF;
+    position: absolute;
+    top: 130px;
+    left: 45px;
+}
+
+.string {
+    width: 2px;
+    height: 70px;
+    background-color: #555;
+    position: absolute;
+    top: 140px;
+    left: 49px;
+}
