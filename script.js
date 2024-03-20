@@ -18,14 +18,7 @@ document.getElementById('revealBtn').addEventListener('click', function() {
     string.className = 'string';
     balloonContainer.appendChild(string);
 
-    // Balloon floating around the screen
-    balloonContainer.style.animation = 'floatAround 10s linear infinite';
-    @keyframes floatAround {
-        from { transform: translate(0, 0); }
-        to { transform: translate(100vw, 100vh); }
-    }
-
-    // Burst balloon on click
+    // Balloon click event
     balloon.addEventListener('click', function() {
         // Trigger slow-motion confetti
         confetti({
