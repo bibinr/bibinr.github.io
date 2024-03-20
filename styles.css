@@ -26,7 +26,7 @@ h1 {
 
 .balloon-container {
     position: relative;
-    cursor: url('pin-icon.png'), auto; /* Pin icon as cursor */
+    cursor: url('pin.png'), auto; /* Pin icon as cursor */
 }
 
 .balloon {
