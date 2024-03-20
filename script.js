@@ -2,6 +2,7 @@ document.getElementById('revealBtn').addEventListener('click', function() {
     this.remove(); // Remove the reveal button
 
     const gender = 'boy'
+	document.getElementById('body').innerHTML = waitinghtml
 
 setTimeout(() => {
   if (gender == 'boy') {
@@ -19,6 +20,27 @@ setTimeout(() => {
   
 },5000)
 
+
+var waitinghtml = `<div class='container-fluid mt-5'>
+  <div class='row'>
+    <div class='col-12 col-md-6 offset-md-3'>
+      <div class='container-fluid'>
+         <div class='row'>
+           <div class='col-12 text-center'>
+             <h1>We're having a: </h1>
+           </div>
+        </div>
+        <div id="reveal" class='row'>
+           <div id="spinner" class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>`
+	
 var boySVG = `<div class='baby'><div class='container'><div class='row'><div class='col-6 offset-2'><?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
