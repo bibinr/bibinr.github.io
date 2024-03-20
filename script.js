@@ -37,13 +37,18 @@ document.getElementById('revealBtn').addEventListener('click', function() {
 
     // Wait for 3 seconds before popping the balloon
     setTimeout(() => {
-        balloon.style.background = 'url("confetti.png")'; // Placeholder for confetti effect
-        balloon.innerHTML = '<h1 style="text-align: center; color: white; padding-top: 30px;">It\'s a Boy!</h1>';
-        // Adjust styles for the popped balloon
-        balloon.style.borderRadius = '0';
-        balloon.style.width = '200px';
-        balloon.style.height = '200px';
+        // Simulate balloon popping and reveal message
+        balloon.innerHTML = '<h1 style="text-align: center; color: #1E90FF; padding-top: 30px;">It\'s a Boy!</h1>';
+        balloon.style.backgroundColor = 'transparent'; // Make the balloon transparent to show confetti
         tringle.style.display = 'none';
         string.style.display = 'none';
+
+        // Trigger confetti explosion
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#add8e6', '#87CEEB', '#1E90FF'], // Shades of blue
+        });
     }, 3000); // Delay to simulate anticipation
 });
