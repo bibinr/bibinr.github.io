@@ -1,37 +1,35 @@
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f0f8ff;
-}
-
-#revealBtnContainer {
-    text-align: center;
+    text-align: center; /* Center align all text */
 }
 
 #revealBtn {
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 24px; /* Bigger text */
+    padding: 15px 30px;
     background-color: #4fc3f7;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     color: white;
+    margin-bottom: 20px; /* Add some space above the balloon */
 }
-
 
 .balloon-container {
     position: relative;
-    width: 100px;
-    height: 140px;
+    width: 200px; /* Increased size */
+    height: 280px; /* Increased size */
     margin: auto;
 }
 
 .balloon {
-    width: 100px;
-    height: 130px;
+    width: 200px; /* Increased size */
+    height: 260px; /* Increased size */
     background-color: #87CEEB; /* Lighter blue */
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
     position: absolute;
@@ -40,32 +38,7 @@ body {
     animation: float 2s infinite ease-in-out;
 }
 
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-.tringle {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 10px solid #1E90FF;
-    position: absolute;
-    top: 130px;
-    left: 45px;
-}
-
-.string {
-    width: 2px;
-    height: 70px;
-    background-color: #555;
-    position: absolute;
-    top: 140px;
-    left: 49px;
+h1 {
+    font-size: 32px; /* Bigger text */
+    color: #1E90FF;
 }
