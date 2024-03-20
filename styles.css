@@ -43,7 +43,7 @@ h1 {
     animation: float 2s ease-in-out infinite; /* Smooth floating animation */
 }
 
-@keyframes float {
+/* @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
 }
@@ -61,7 +61,7 @@ h1 {
     75% {
         transform: translate(-50vw, 50vh);
     }
-}
+} */
 
 .tringle {
     width: 0;
