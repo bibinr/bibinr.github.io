@@ -8,77 +8,45 @@
     color: white;
 }
 
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden; /* Prevent scrolling */
-    position: relative; /* Ensure positioning context */
+body {
+  background-color: #D0D0D0;
+  color: black;
+  height: 100%;
+  width: 100%;
 }
 
-h1 {
-    font-size: 32px;
-    text-align: center;
-    color: #1E90FF;
+.baby {
+  height: 100%;
+  width: 100%;
 }
 
-.balloon-container {
-    position: absolute;
-/*     top: 50%;
-    left: 50%; */
-    transform: translate(-50%, -50%);
-    animation: floatAround 20s linear infinite; /* Adjusted to ensure it starts correctly */
-    cursor: url('pin.png'), auto; /* Adjust according to your actual cursor image path */
+/** Spinner CSS */
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  background-color: #333;
+
+  border-radius: 100%;  
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
 }
 
-.balloon {
-    width: 150px; /* Larger balloon */
-    height: 200px;
-/*     background-color: #FF69B4; */ 
-    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-    position: relative;
-    animation: float 2s ease-in-out infinite; /* Smooth floating animation */
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
 }
 
-/* @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes floatAround {
-    0%, 100% {
-        transform: translate(-50%, -50%);
-    }
-    25% {
-        transform: translate(50vw, -50%);
-    }
-    50% {
-        transform: translate(50vw, 50vh);
-    }
-    75% {
-        transform: translate(-50vw, 50vh);
-    }
-} */
-
-.tringle {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 20px solid #FF69B4; /* Matching tringle color with balloon */
-    position: absolute;
-    left: 45px; /* Adjust based on balloon width */
-    top: 130px;
-}
-
-.string {
-    width: 2px;
-    height: 50px; /* Adjust string length as needed */
-    background-color: #555;
-    position: absolute;
-    left: 49px; /* Center below the balloon */
-    top: 140px;
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
 }
