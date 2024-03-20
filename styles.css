@@ -30,7 +30,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     animation: floatAround 20s linear infinite; /* Adjusted to ensure it starts correctly */
-    cursor: url('pin-icon.png'), auto; /* Adjust according to your actual cursor image path */
+    cursor: url('pin.png'), auto; /* Adjust according to your actual cursor image path */
 }
 
 .balloon {
