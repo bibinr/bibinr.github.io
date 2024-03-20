@@ -16,7 +16,12 @@ setTimeout(() => {
     document.getElementsByTagName('body')[0].style.color = 'pink';
     document.getElementsByTagName('body')[0].style.background = 'pink'; 
   }
- 
+ confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#add8e6', '#87CEEB', '#1E90FF'], // Shades of blue
+        });
   
 },5000)
 
