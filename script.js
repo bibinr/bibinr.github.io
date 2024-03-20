@@ -2,7 +2,7 @@ document.getElementById('revealBtn').addEventListener('click', function() {
     this.remove(); // Remove the reveal button
 
     const gender = 'boy'
-this.innerHTML = waitinghtml
+    document.getElementById('announcement').style.display = "block";
 
 setTimeout(() => {
   if (gender == 'boy') {
