@@ -1,7 +1,7 @@
 #revealBtn {
-    font-size: 24px; /* Bigger text */
+    font-size: 100px; /* Bigger text */
     padding: 15px 30px;
-    background-color: #4fc3f7;
+    background-color: #E1342C;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -30,8 +30,8 @@ h1 {
 }
 
 .balloon {
-    width: 150px; /* Larger balloon */
-    height: 200px;
+    width: 450px; /* Larger balloon */
+    height: 600px;
     background-color: #FF69B4; /* New balloon color */
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
     position: absolute;
