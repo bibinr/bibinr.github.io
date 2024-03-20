@@ -7,6 +7,16 @@ body, html {
     background-color: #f0f8ff;
 }
 
+#revealBtn {
+    font-size: 24px; /* Bigger text */
+    padding: 15px 30px;
+    background-color: #4fc3f7;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+
 .balloon-container {
     position: relative;
     cursor: url('pin.png'), auto; /* Pin cursor - ensure you have a pin-icon.png */
