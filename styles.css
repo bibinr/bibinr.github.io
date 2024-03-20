@@ -1,48 +1,57 @@
-body, h1 {
-    font-family: 'Roboto', sans-serif;
-    text-align: center; /* Center align all text */
-}
-
-#revealBtn {
-    font-size: 24px; /* Bigger text */
-    padding: 15px 30px;
-    background-color: #4fc3f7;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    color: white;
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
 }
 
 .balloon-container {
-    cursor: url('pin.png'), auto; /* Pin cursor, ensure 'pin.png' is a valid image URL */
     position: relative;
-    width: 150px; /* Increased size */
-    height: 210px;
-    margin: 20px auto;
+    cursor: url('pin-icon.png'), auto; /* Pin cursor - ensure you have a pin-icon.png */
 }
 
 .balloon {
-    width: 150px; /* Increased size */
-    height: 195px;
-    background-color: #FF69B4; /* New balloon color */
+    width: 150px; /* Larger balloon */
+    height: 200px;
+    background-color: #FF69B4; /* New color */
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: float 2s infinite ease-in-out;
+    animation: float 5s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 .tringle {
-    border-top: 15px solid #FF69B4; /* Adjusted for new balloon size */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #FF69B4; /* Match balloon color */
+    position: absolute;
+    top: 200px;
+    left: 70px;
 }
 
 .string {
-    height: 100px; /* Adjusted for new balloon size */
+    width: 2px;
+    height: 50px;
+    background-color: #555;
+    position: absolute;
+    top: 220px;
+    left: 74px;
 }
 
-/* Center the reveal message more effectively */
-.balloon h1 {
-    color: #1E90FF;
-    font-size: 24px; /* Bigger text */
-    padding-top: 60px; /* Adjust padding for larger balloon */
+h1 {
+    font-size: 32px; /* Bigger text */
+    color: #1E90FF; /* Blue color for the text */
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
