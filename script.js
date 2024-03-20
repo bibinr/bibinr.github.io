@@ -35,10 +35,10 @@ document.getElementById('revealBtn').addEventListener('click', function() {
     string.className = 'string';
     balloonContainer.appendChild(string);
 
-    // Wait for 3 seconds before popping the balloon
-    setTimeout(() => {
+    // Event listener for tapping on the balloon
+    balloon.addEventListener('click', function() {
         // Simulate balloon popping and reveal message
-        balloon.innerHTML = '<h1 style="text-align: center; color: #1E90FF; padding-top: 30px;">It\'s a Boy!</h1>';
+        balloon.innerHTML = '<h1>It\'s a Boy!</h1>';
         balloon.style.backgroundColor = 'transparent'; // Make the balloon transparent to show confetti
         tringle.style.display = 'none';
         string.style.display = 'none';
@@ -50,5 +50,6 @@ document.getElementById('revealBtn').addEventListener('click', function() {
             origin: { y: 0.6 },
             colors: ['#add8e6', '#87CEEB', '#1E90FF'], // Shades of blue
         });
-    }, 3000); // Delay to simulate anticipation
+    });
 });
+
