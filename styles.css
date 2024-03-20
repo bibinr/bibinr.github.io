@@ -1,12 +1,3 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f8ff;
-}
-
 #revealBtn {
     font-size: 24px; /* Bigger text */
     padding: 15px 30px;
@@ -17,20 +8,34 @@ body, html {
     color: white;
 }
 
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    color: #1E90FF;
+}
+
 .balloon-container {
     position: relative;
-    cursor: url('pin.png'), auto; /* Pin cursor - ensure you have a pin-icon.png */
+    cursor: url('pin-icon.png'), auto; /* Pin icon as cursor */
 }
 
 .balloon {
     width: 150px; /* Larger balloon */
     height: 200px;
-    background-color: #FF69B4; /* New color */
+    background-color: #FF69B4; /* New balloon color */
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-    animation: float 5s ease-in-out infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    animation: float 5s ease-in-out infinite; /* Smooth floating animation */
 }
 
 @keyframes float {
@@ -43,25 +48,17 @@ body, html {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 20px solid #FF69B4; /* Match balloon color */
+    border-top: 20px solid #FF69B4; /* Matching tringle color with balloon */
     position: absolute;
-    top: 200px;
-    left: 70px;
+    left: calc(50% - 10px);
+    bottom: -20px;
 }
 
 .string {
     width: 2px;
-    height: 50px;
+    height: 100px; /* Longer string */
     background-color: #555;
     position: absolute;
-    top: 220px;
-    left: 74px;
-}
-
-h1 {
-    font-size: 32px; /* Bigger text */
-    color: #1E90FF; /* Blue color for the text */
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    left: calc(50% - 1px);
+    bottom: -120px;
 }
