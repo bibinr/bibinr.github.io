@@ -8,12 +8,23 @@
     color: white;
 }
 
-body {
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+    position: relative; /* Ensure positioning context */
+}
+
+/* body {
   background-color: #D0D0D0;
   color: black;
   height: 100%;
   width: 100%;
-}
+} */
 
 .baby {
   height: 100%;
