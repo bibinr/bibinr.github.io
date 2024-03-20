@@ -25,22 +25,41 @@ h1 {
 }
 
 .balloon-container {
-    position: relative;
-    cursor: url('pin.png'), auto; /* Pin icon as cursor */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: floatAround 20s linear infinite; /* Adjusted to ensure it starts correctly */
+    cursor: url('pin-icon.png'), auto; /* Adjust according to your actual cursor image path */
 }
 
 .balloon {
     width: 150px; /* Larger balloon */
     height: 200px;
-    background-color: #FF69B4; /* New balloon color */
+    background-color: #FF69B4; /* Adjusted balloon color */
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-    position: absolute;
-    animation: float 5s ease-in-out infinite; /* Smooth floating animation */
+    position: relative;
+    animation: float 2s ease-in-out infinite; /* Smooth floating animation */
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
+}
+
+@keyframes floatAround {
+    0%, 100% {
+        transform: translate(-50%, -50%);
+    }
+    25% {
+        transform: translate(50vw, -50%);
+    }
+    50% {
+        transform: translate(50vw, 50vh);
+    }
+    75% {
+        transform: translate(-50vw, 50vh);
+    }
 }
 
 .tringle {
@@ -50,8 +69,8 @@ h1 {
     border-right: 10px solid transparent;
     border-top: 20px solid #FF69B4; /* Matching tringle color with balloon */
     position: absolute;
-    left: calc(50% - 10px);
-    bottom: -20px;
+    left: 70px; /* Centered below the balloon */
+    top: 200px;
 }
 
 .string {
@@ -59,35 +78,6 @@ h1 {
     height: 100px; /* Longer string */
     background-color: #555;
     position: absolute;
-    left: calc(50% - 1px);
-    bottom: -120px;
+    left: 74px; /* Centered below the balloon */
+    top: 220px;
 }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-/* New keyframes for floating around the screen */
-@keyframes floatAround {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(100vw, 0);
-    }
-    50% {
-        transform: translate(100vw, 100vh);
-    }
-    75% {
-        transform: translate(0, 100vh);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
-.balloon-container {
-    animation: floatAround 20s infinite linear;
-}
-
