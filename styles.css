@@ -9,7 +9,7 @@ body, html {
 
 .balloon-container {
     position: relative;
-    cursor: url('pin-icon.png'), auto; /* Pin cursor - ensure you have a pin-icon.png */
+    cursor: url('pin.png'), auto; /* Pin cursor - ensure you have a pin-icon.png */
 }
 
 .balloon {
