@@ -1,59 +1,158 @@
 document.getElementById('revealBtn').addEventListener('click', function() {
     this.remove(); // Remove the reveal button
 
-    const colors = ['#FF69B4', '#87CEEB']; // Pink and blue colors for balloons
+    const gender = 'boy'
 
-    // Function to generate a random number within a range
-    const randomInRange = (min, max) => Math.random() * (max - min) + min;
+setTimeout(() => {
+  if (gender == 'boy') {
+    const e = document.getElementById('reveal').innerHTML = boySVG
+  
+    document.getElementsByTagName('body')[0].style.color = '#89cff0';
+    document.getElementsByTagName('body')[0].style.background = '#89cff0'; 
+  } else {
+    const e = document.getElementById('reveal').innerHTML = girlSVG
+  
+    document.getElementsByTagName('body')[0].style.color = 'pink';
+    document.getElementsByTagName('body')[0].style.background = 'pink'; 
+  }
+ 
+  
+},5000)
 
-    for (let i = 0; i < 10; i++) { // Create 10 balloons
-        let balloonContainer = document.createElement('div');
-        balloonContainer.className = 'balloon-container';
-        balloonContainer.style.left = `${randomInRange(10, 90)}vw`;
-        balloonContainer.style.top = `${randomInRange(10, 90)}vh`;
+var boySVG = `<div class='baby'><div class='container'><div class='row'><div class='col-6 offset-2'><?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 33 33" style="enable-background:new 0 0 33 33;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M16.5,32.65c-6.145,0-11.534-4.037-12.975-9.655C1.575,22.96,0,21.363,0,19.405c0-1.98,1.611-3.592,3.592-3.592h0.308
+			c1.875-5.076,6.892-8.461,12.601-8.461s10.726,3.385,12.601,8.461h0.309c1.979,0,3.591,1.611,3.591,3.592
+			c0,1.958-1.575,3.555-3.524,3.59C28.035,28.613,22.645,32.65,16.5,32.65z M3.592,16.813C2.163,16.813,1,17.977,1,19.405
+			s1.163,2.591,2.592,2.591H3.92c0.234,0,0.438,0.163,0.488,0.393c1.186,5.366,6.271,9.262,12.092,9.262s10.907-3.896,12.093-9.262
+			c0.051-0.229,0.254-0.393,0.488-0.393h0.328c1.429,0,2.591-1.162,2.591-2.591s-1.162-2.592-2.591-2.592h-0.662
+			c-0.215,0-0.405-0.137-0.474-0.341c-1.636-4.856-6.367-8.12-11.773-8.12s-10.138,3.264-11.773,8.12
+			c-0.068,0.204-0.259,0.341-0.474,0.341H3.592z"/>
+		<g>
+			<circle cx="20.69" cy="21.334" r="1.208"/>
+		</g>
+		<g>
+			<circle cx="12.771" cy="21.334" r="1.208"/>
+		</g>
+		<path d="M16.499,27.87c-1.223,0-2.444-0.335-3.533-1.006l-0.197-0.121c-0.234-0.146-0.308-0.453-0.163-0.688
+			c0.146-0.235,0.454-0.306,0.688-0.163l0.196,0.121c1.855,1.143,4.161,1.144,6.021-0.001l0.195-0.121
+			c0.234-0.143,0.543-0.072,0.688,0.163c0.145,0.235,0.071,0.543-0.163,0.688l-0.196,0.121C18.944,27.534,17.721,27.87,16.499,27.87
+			z"/>
+	</g>
+	<path d="M17.6,8.417c-2.44,0-4.426-1.985-4.426-4.426c0-2.008,1.633-3.642,3.641-3.642c1.661,0,3.013,1.352,3.013,3.013
+		c0,1.385-1.126,2.511-2.511,2.511c-1.162,0-2.107-0.946-2.107-2.108c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5
+		c0,0.611,0.497,1.108,1.107,1.108c0.833,0,1.511-0.678,1.511-1.511c0-1.109-0.903-2.013-2.013-2.013
+		c-1.456,0-2.641,1.185-2.641,2.642c0,1.889,1.537,3.426,3.426,3.426c0.276,0,0.5,0.224,0.5,0.5S17.876,8.417,17.6,8.417z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg></div></div></div></div>`
 
-        let balloon = document.createElement('div');
-        balloon.className = 'balloon';
-        balloon.style.backgroundColor = colors[i % colors.length]; // Alternate colors
-        balloonContainer.appendChild(balloon);
+var girlSVG = `<div class='baby'><div class='container'><div class='row'><div class='col-6 offset-2'><?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 33 33" style="enable-background:new 0 0 33 33;" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<path d="M16.5,31.146c-6.145,0-11.534-4.037-12.975-9.655C1.575,21.456,0,19.858,0,17.9c0-1.98,1.611-3.592,3.592-3.592h0.308
+				c0.884-2.38,2.54-4.502,4.694-6.005C8.817,8.147,9.13,8.199,9.29,8.427c0.158,0.227,0.103,0.538-0.124,0.696
+				c-2.082,1.453-3.659,3.528-4.439,5.845c-0.068,0.203-0.259,0.34-0.474,0.34H3.592C2.163,15.308,1,16.471,1,17.9
+				s1.163,2.592,2.592,2.592H3.92c0.234,0,0.438,0.163,0.488,0.393c1.186,5.366,6.271,9.262,12.092,9.262s10.907-3.896,12.093-9.262
+				c0.051-0.229,0.254-0.393,0.488-0.393h0.328c1.429,0,2.591-1.163,2.591-2.592s-1.162-2.592-2.591-2.592h-0.662
+				c-0.215,0-0.405-0.137-0.474-0.341c-0.787-2.335-2.311-4.348-4.404-5.819c-0.227-0.159-0.28-0.471-0.122-0.696
+				c0.16-0.226,0.472-0.28,0.696-0.122c2.168,1.523,3.772,3.585,4.657,5.979h0.309c1.979,0,3.591,1.611,3.591,3.592
+				c0,1.958-1.575,3.556-3.524,3.591C28.035,27.109,22.645,31.146,16.5,31.146z"/>
+			<g>
+				<circle cx="20.69" cy="19.829" r="1.208"/>
+			</g>
+			<g>
+				<circle cx="12.771" cy="19.829" r="1.208"/>
+			</g>
+			<path d="M16.5,26.366c-1.223,0-2.444-0.336-3.534-1.007l-0.195-0.119c-0.235-0.145-0.31-0.452-0.166-0.688
+				c0.146-0.237,0.454-0.309,0.688-0.166l0.196,0.12c1.859,1.145,4.165,1.144,6.022,0.001l0.195-0.121
+				c0.234-0.143,0.543-0.073,0.688,0.163c0.145,0.235,0.071,0.543-0.163,0.688l-0.196,0.121C18.944,26.03,17.722,26.366,16.5,26.366
+				z"/>
+		</g>
+	</g>
+	<g>
+		<path d="M16.5,8.722c-1.31,0-2.375-1.065-2.375-2.375S15.19,3.972,16.5,3.972s2.375,1.065,2.375,2.375S17.81,8.722,16.5,8.722z
+			 M16.5,4.972c-0.758,0-1.375,0.617-1.375,1.375s0.617,1.375,1.375,1.375s1.375-0.617,1.375-1.375S17.258,4.972,16.5,4.972z"/>
+		<path d="M22.226,10.841c-0.294,0-0.59-0.055-0.872-0.166l-5.037-1.988c-0.257-0.102-0.383-0.392-0.281-0.648
+			c0.101-0.257,0.391-0.385,0.648-0.281l5.037,1.988c0.432,0.169,0.896,0.117,1.278-0.143s0.602-0.675,0.602-1.137V4.229
+			c0-0.463-0.22-0.877-0.602-1.138C22.616,2.831,22.15,2.78,21.721,2.95l-5.037,1.987c-0.258,0.104-0.548-0.024-0.648-0.281
+			c-0.102-0.257,0.024-0.548,0.281-0.648l5.037-1.987c0.731-0.288,1.557-0.198,2.207,0.244c0.651,0.443,1.04,1.178,1.04,1.965v4.237
+			c0,0.787-0.389,1.521-1.039,1.964C23.162,10.702,22.695,10.841,22.226,10.841z"/>
+		<path d="M10.774,10.841c-0.47,0-0.937-0.14-1.337-0.412c-0.65-0.442-1.038-1.176-1.038-1.963V4.229
+			c0-0.787,0.389-1.521,1.039-1.964c0.652-0.443,1.478-0.533,2.209-0.245l5.036,1.987c0.257,0.102,0.383,0.392,0.281,0.648
+			c-0.101,0.257-0.392,0.385-0.648,0.281L11.28,2.95c-0.432-0.169-0.896-0.118-1.279,0.142C9.619,3.352,9.399,3.766,9.399,4.229
+			v4.237c0,0.462,0.219,0.876,0.601,1.137c0.383,0.26,0.85,0.311,1.28,0.143l5.036-1.988c0.257-0.104,0.548,0.024,0.648,0.281
+			c0.102,0.257-0.024,0.547-0.281,0.648l-5.036,1.988C11.365,10.787,11.069,10.841,10.774,10.841z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg></div></div></div></div>`
 
-        let tringle = document.createElement('div');
-        tringle.className = 'tringle';
-        tringle.style.borderTopColor = colors[i % colors.length]; // Match tringle color with balloon
-        balloonContainer.appendChild(tringle);
 
-        let string = document.createElement('div');
-        string.className = 'string';
-        balloonContainer.appendChild(string);
-
-        document.body.appendChild(balloonContainer);
-
-        // Balloon pop event listener
-        balloonContainer.addEventListener('click', function() {
-            // Trigger confetti explosion
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 },
-                colors: ['#87CEEB'], // Blue confetti for "It's a Boy!"
-            });
-
-            // Remove balloon after popping
-            this.remove();
-
-            // Optional: Show "It's a Boy!" message
-            if (!document.querySelector('.reveal-message')) {
-                let message = document.createElement('h1');
-                message.className = 'reveal-message';
-                message.textContent = "It's a Boy!";
-                message.style.position = 'fixed';
-                message.style.top = '50%';
-                message.style.left = '50%';
-                message.style.transform = 'translate(-50%, -50%)';
-                message.style.color = '#87CEEB';
-                message.style.fontSize = '2rem';
-                document.body.appendChild(message);
-            }
-        });
-    }
 });
