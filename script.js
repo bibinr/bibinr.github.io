@@ -1,20 +1,3 @@
-// document.getElementById('revealBtn').addEventListener('click', function() {
-//     this.style.display = 'none'; // Hide the button after click
-
-//     // Trigger confetti explosion
-//     confetti({
-//         particleCount: 100,
-//         spread: 70,
-//         origin: { y: 0.6 },
-//         colors: ['#add8e6', '#87CEEB', '#1E90FF'], // Shades of blue
-//     });
-
-//     setTimeout(() => {
-//         document.body.innerHTML += '<h1 style="text-align: center; color: #1E90FF;">It\'s a Boy!</h1>';
-//     }, 1500); // Delay message appearance to focus on confetti
-// });
-
-
 document.getElementById('revealBtn').addEventListener('click', function() {
     this.style.display = 'none'; // Hide the button after click
 
@@ -35,21 +18,25 @@ document.getElementById('revealBtn').addEventListener('click', function() {
     string.className = 'string';
     balloonContainer.appendChild(string);
 
-    // Event listener for tapping on the balloon
-    balloon.addEventListener('click', function() {
-        // Simulate balloon popping and reveal message
-        balloon.innerHTML = '<h1>It\'s a Boy!</h1>';
-        balloon.style.backgroundColor = 'transparent'; // Make the balloon transparent to show confetti
-        tringle.style.display = 'none';
-        string.style.display = 'none';
+    // Balloon pop on click
+    balloonContainer.addEventListener('click', () => {
+        if (!balloon.classList.contains('popped')) {
+            balloon.classList.add('popped'); // Prevent multiple pops
 
-        // Trigger confetti explosion
-        confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 },
-            colors: ['#add8e6', '#87CEEB', '#1E90FF'], // Shades of blue
-        });
+            // Change the balloon to display the message and confetti
+            balloon.innerHTML = '<h1>It\'s a Boy!</h1>';
+            balloon.style.backgroundColor = 'transparent'; // Make the balloon "pop"
+            tringle.style.display = 'none';
+            string.style.display = 'none';
+
+            // Trigger confetti explosion
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#add8e6', '#87CEEB', '#1E90FF'], // Shades of blue
+            });
+        }
     });
 });
 
