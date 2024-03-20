@@ -30,8 +30,8 @@ h1 {
 }
 
 .balloon {
-    width: 450px; /* Larger balloon */
-    height: 600px;
+    width: 300px; /* Larger balloon */
+    height: 400px;
     background-color: #FF69B4; /* New balloon color */
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
     position: absolute;
