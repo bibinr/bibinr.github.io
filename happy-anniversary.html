@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Anniversary Scratch-Off Coupons</title>
+  <title>Happy Anniversary :-* </title>
   <style>
     /* RESET */
     * {
@@ -12,10 +12,11 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
+
     body {
       background: #f9f9f9;
       color: #333;
-      padding: 2rem;
+      padding: 2rem 1rem; /* A bit more flexible for mobile (1rem on sides) */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,6 +31,7 @@
     .header h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: teal; /* Teal accent color for the main heading */
     }
     .header p {
       font-size: 1rem;
@@ -47,16 +49,19 @@
 
     /* COUPON CARD */
     .coupon-card {
-      width: 300px;
-      height: 220px; /* Adjust height as needed */
+      /* Make width fluid for mobile, max width for larger screens */
+      width: 90%;
+      max-width: 320px;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      position: relative; /* Needed for absolute positioning of canvas */
-      overflow: hidden;   /* Hide canvas edges if they go outside the card */
+      position: relative; 
+      overflow: hidden;   
+      /* Add a bit of spacing at the bottom; no fixed height so content can grow */
+      min-height: 220px;
     }
 
-    /* COUPON CONTENT (VISIBLE BEHIND CANVAS) */
+    /* COUPON CONTENT (BACKGROUND) */
     .coupon-content {
       position: absolute;
       top: 0; 
@@ -64,11 +69,12 @@
       width: 100%; 
       height: 100%;
       padding: 1rem;
-      z-index: 1; /* Ensure text is "behind" the canvas but accessible to screen readers */
+      z-index: 1; /* behind the canvas, but still readable for screen readers */
     }
     .coupon-content h2 {
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
+      color: #333;
     }
     .coupon-content p {
       font-size: 0.95rem;
@@ -99,6 +105,19 @@
       font-size: 0.9rem;
       color: #999;
     }
+
+    /* MEDIA QUERIES for smaller screens if desired */
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.6rem;
+      }
+      .header p {
+        font-size: 0.95rem;
+      }
+      .coupon-card {
+        max-width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -116,10 +135,10 @@
       <div class="coupon-content">
         <h2>The “Complete Home Spa Takeover”</h2>
         <p>
-          Enjoy a full spa experience at home—foot soak, face masks, aromatherapy, and a stress-melting massage. I'll watch the baby so you can fully relax.
+          Enjoy a full spa experience at home—foot soak, face masks, aromatherapy, and a stress-melting massage. I'll set everything up and watch the baby so you can fully relax.
         </p>
         <p class="small-print">
-          * Never expires!
+          * Never expires! 7 day notice required
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -130,10 +149,10 @@
       <div class="coupon-content">
         <h2>The “Magic Baby Shift”</h2>
         <p>
-          Hand over all baby duties to me for a day or evening. Rest, write, or binge-watch your favorite show while I manage everything else.
+          Hand over all baby duties to me for a day. Rest, write, or binge-watch your favorite show while I manage everything else.
         </p>
         <p class="small-print">
-          * No limit on length of shift.
+          * 7 day notice required.
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -144,10 +163,10 @@
       <div class="coupon-content">
         <h2>The “Writer’s Sanctuary”</h2>
         <p>
-          A dedicated block of writing time—free from interruptions. I'll set up a peaceful space and ensure you can focus on your creative flow.
+          A dedicated block of writing time—free from interruptions. I'll set up a peaceful space and ensure you can focus on your creative flow. Get writing babe!
         </p>
         <p class="small-print">
-          * Perfect for blogging!
+          * 1 day notice required!
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -161,7 +180,7 @@
           A screen-free picnic or short hike. I'll pack snacks, manage the stroller, and let you soak up nature’s stress relief.
         </p>
         <p class="small-print">
-          * Weather permitting!
+          * Weather permitting! 3 day notice required
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -170,12 +189,12 @@
     <!-- COUPON #5 (Blogging Booster) -->
     <div class="coupon-card">
       <div class="coupon-content">
-        <h2>The “Blogging Booster”</h2>
+        <h2>The “Lazy Booster”</h2>
         <p>
-          Uninterrupted blogging time! I'll watch the baby, handle chores, and even help brainstorm post ideas or take photos for your blog if needed.
+          Uninterrupted you time! I'll watch the baby, handle chores, and even help brainstorm things to do or ideas if you prefer.
         </p>
         <p class="small-print">
-          * No expiration date.
+          * No expiration date. 7 day notice required
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -186,10 +205,10 @@
       <div class="coupon-content">
         <h2>The “Wellness Weekend Workout”</h2>
         <p>
-          A planned fitness session—yoga, a jog, or an online class—while I handle baby care. I'll cheer you on every step of the way!
+          A planned fitness session—yoga, a jog, or an online class together. I'll plan every step of the way!
         </p>
         <p class="small-print">
-          * Instructor not included.
+          * 7 day notice required
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -203,7 +222,7 @@
           I'll handle a day or weekend of meal planning, shopping, and prepping so you can relax and enjoy healthy, stress-free meals.
         </p>
         <p class="small-print">
-          * Perfect for trying new recipes.
+          * New recipes or recipes you request. 7 day notice required
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -214,7 +233,7 @@
       <div class="coupon-content">
         <h2>The “Mom’s Day (or Night) Out”</h2>
         <p>
-          Guilt-free me-time outside the house—spa, coffee, or shopping. I'll watch the baby and tackle chores so you can savor every moment.
+          Guilt-free you-time outside the house—spa, coffee, or shopping. I'll watch the baby and tackle chores so you can savor every moment.
         </p>
         <p class="small-print">
           * Redeemable day or night.
@@ -231,7 +250,7 @@
           Let’s do self-care together—face masks, foot soaks, or massages—while I handle any interruptions. A perfect cozy day for us both!
         </p>
         <p class="small-print">
-          * Perfect for bonding time.
+          * 7 day notice required. 
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -245,7 +264,7 @@
           Start your day with gentle yoga or meditation. I'll watch the baby and prepare breakfast while you find your zen.
         </p>
         <p class="small-print">
-          * Valid any morning we can manage.
+          * Valid any morning we can manage. 2 day Notice required
         </p>
       </div>
       <canvas class="scratch-canvas"></canvas>
@@ -260,9 +279,8 @@
   <script>
     // JavaScript for Scratch-Off Effect
     // ---------------------------------
-    // For each canvas, we create a "silver" overlay and listen for mouse/touch events.
+    // For each canvas, we create a "teal" overlay and listen for mouse/touch events.
     
-    // Grab all the canvases
     const scratchCanvases = document.querySelectorAll('.scratch-canvas');
 
     scratchCanvases.forEach(canvas => {
@@ -275,57 +293,61 @@
       canvas.width = w;
       canvas.height = h;
 
-      // Fill the overlay with a silver color or pattern
-      ctx.fillStyle = '#c0c0c0';
+      // Fill the overlay with TEAL
+      ctx.fillStyle = 'teal';
       ctx.fillRect(0, 0, w, h);
 
-      // To "erase," we use compositing
+      // Switch to 'destination-out' so drawing "erases" the teal overlay
       ctx.globalCompositeOperation = 'destination-out';
 
       let isDrawing = false;
 
-      // Utility function to get mouse or touch position relative to the canvas
+      // Helper to get mouse/touch position relative to canvas
       function getPosition(e) {
         let x, y;
+        // Touch events
         if (e.type.startsWith('touch')) {
           const rect = canvas.getBoundingClientRect();
           x = e.touches[0].clientX - rect.left;
           y = e.touches[0].clientY - rect.top;
-        } else {
+        } 
+        // Mouse events
+        else {
           x = e.offsetX;
           y = e.offsetY;
         }
         return { x, y };
       }
 
-      // Start drawing
+      // Start scratching
       function startScratch(e) {
         e.preventDefault();
         isDrawing = true;
         scratch(e);
       }
 
-      // Draw a circle to "erase" overlay
+      // Scratch function
       function scratch(e) {
         if (!isDrawing) return;
         const { x, y } = getPosition(e);
         ctx.beginPath();
-        ctx.arc(x, y, 20, 0, Math.PI * 2); // Circle radius = 20
+        // Circle radius = 20 for eraser
+        ctx.arc(x, y, 20, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // Stop drawing
+      // Stop scratching
       function endScratch() {
         isDrawing = false;
       }
 
-      // Mouse Events
+      // Mouse events
       canvas.addEventListener('mousedown', startScratch);
       canvas.addEventListener('mousemove', scratch);
       canvas.addEventListener('mouseup', endScratch);
       canvas.addEventListener('mouseleave', endScratch);
 
-      // Touch Events
+      // Touch events
       canvas.addEventListener('touchstart', startScratch, { passive: false });
       canvas.addEventListener('touchmove', scratch, { passive: false });
       canvas.addEventListener('touchend', endScratch);
