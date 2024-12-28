@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Anniversary Scratch-Off Coupons</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .header p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* COUPONS WRAPPER */
+    .coupons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      max-width: 1200px;
+    }
+
+    /* COUPON CARD */
+    .coupon-card {
+      width: 300px;
+      height: 220px; /* Adjust height as needed */
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      position: relative; /* Needed for absolute positioning of canvas */
+      overflow: hidden;   /* Hide canvas edges if they go outside the card */
+    }
+
+    /* COUPON CONTENT (VISIBLE BEHIND CANVAS) */
+    .coupon-content {
+      position: absolute;
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%;
+      padding: 1rem;
+      z-index: 1; /* Ensure text is "behind" the canvas but accessible to screen readers */
+    }
+    .coupon-content h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .coupon-content p {
+      font-size: 0.95rem;
+      line-height: 1.3;
+      color: #555;
+    }
+    .small-print {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.5rem;
+    }
+
+    /* SCRATCH CANVAS */
+    .scratch-canvas {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2; /* Above the coupon text */
+      cursor: crosshair;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Anniversary Scratch-Off Coupons</h1>
+    <p>Click or touch and drag to reveal each hidden coupon message!</p>
+  </header>
+
+  <!-- COUPONS CONTAINER -->
+  <section class="coupons">
+
+    <!-- COUPON #1 -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Complete Home Spa Takeover”</h2>
+        <p>
+          Enjoy a full spa experience at home—foot soak, face masks, aromatherapy, and a stress-melting massage. I'll watch the baby so you can fully relax.
+        </p>
+        <p class="small-print">
+          * Never expires!
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #2 -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Magic Baby Shift”</h2>
+        <p>
+          Hand over all baby duties to me for a day or evening. Rest, write, or binge-watch your favorite show while I manage everything else.
+        </p>
+        <p class="small-print">
+          * No limit on length of shift.
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #3 -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Writer’s Sanctuary”</h2>
+        <p>
+          A dedicated block of writing time—free from interruptions. I'll set up a peaceful space and ensure you can focus on your creative flow.
+        </p>
+        <p class="small-print">
+          * Perfect for blogging!
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #4 -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Tech-Free Outdoor Escapade”</h2>
+        <p>
+          A screen-free picnic or short hike. I'll pack snacks, manage the stroller, and let you soak up nature’s stress relief.
+        </p>
+        <p class="small-print">
+          * Weather permitting!
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #5 (Blogging Booster) -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Blogging Booster”</h2>
+        <p>
+          Uninterrupted blogging time! I'll watch the baby, handle chores, and even help brainstorm post ideas or take photos for your blog if needed.
+        </p>
+        <p class="small-print">
+          * No expiration date.
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #6 (Wellness Weekend Workout) -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Wellness Weekend Workout”</h2>
+        <p>
+          A planned fitness session—yoga, a jog, or an online class—while I handle baby care. I'll cheer you on every step of
