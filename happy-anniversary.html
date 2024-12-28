@@ -186,4 +186,150 @@
       <div class="coupon-content">
         <h2>The “Wellness Weekend Workout”</h2>
         <p>
-          A planned fitness session—yoga, a jog, or an online class—while I handle baby care. I'll cheer you on every step of
+          A planned fitness session—yoga, a jog, or an online class—while I handle baby care. I'll cheer you on every step of the way!
+        </p>
+        <p class="small-print">
+          * Instructor not included.
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #7 (Meal-Prep Marvel) -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Meal-Prep Marvel”</h2>
+        <p>
+          I'll handle a day or weekend of meal planning, shopping, and prepping so you can relax and enjoy healthy, stress-free meals.
+        </p>
+        <p class="small-print">
+          * Perfect for trying new recipes.
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #8 -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Mom’s Day (or Night) Out”</h2>
+        <p>
+          Guilt-free me-time outside the house—spa, coffee, or shopping. I'll watch the baby and tackle chores so you can savor every moment.
+        </p>
+        <p class="small-print">
+          * Redeemable day or night.
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #9 -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Joint Self-Care Sunday”</h2>
+        <p>
+          Let’s do self-care together—face masks, foot soaks, or massages—while I handle any interruptions. A perfect cozy day for us both!
+        </p>
+        <p class="small-print">
+          * Perfect for bonding time.
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <!-- COUPON #10 (Morning Mindfulness & Movement) -->
+    <div class="coupon-card">
+      <div class="coupon-content">
+        <h2>The “Morning Mindfulness & Movement”</h2>
+        <p>
+          Start your day with gentle yoga or meditation. I'll watch the baby and prepare breakfast while you find your zen.
+        </p>
+        <p class="small-print">
+          * Valid any morning we can manage.
+        </p>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <p>Handmade with love. Redeemable anytime. Happy Anniversary!</p>
+  </footer>
+
+  <script>
+    // JavaScript for Scratch-Off Effect
+    // ---------------------------------
+    // For each canvas, we create a "silver" overlay and listen for mouse/touch events.
+    
+    // Grab all the canvases
+    const scratchCanvases = document.querySelectorAll('.scratch-canvas');
+
+    scratchCanvases.forEach(canvas => {
+      const ctx = canvas.getContext('2d');
+      const card = canvas.parentElement; // .coupon-card
+      const w = card.offsetWidth;
+      const h = card.offsetHeight;
+
+      // Set canvas dimensions
+      canvas.width = w;
+      canvas.height = h;
+
+      // Fill the overlay with a silver color or pattern
+      ctx.fillStyle = '#c0c0c0';
+      ctx.fillRect(0, 0, w, h);
+
+      // To "erase," we use compositing
+      ctx.globalCompositeOperation = 'destination-out';
+
+      let isDrawing = false;
+
+      // Utility function to get mouse or touch position relative to the canvas
+      function getPosition(e) {
+        let x, y;
+        if (e.type.startsWith('touch')) {
+          const rect = canvas.getBoundingClientRect();
+          x = e.touches[0].clientX - rect.left;
+          y = e.touches[0].clientY - rect.top;
+        } else {
+          x = e.offsetX;
+          y = e.offsetY;
+        }
+        return { x, y };
+      }
+
+      // Start drawing
+      function startScratch(e) {
+        e.preventDefault();
+        isDrawing = true;
+        scratch(e);
+      }
+
+      // Draw a circle to "erase" overlay
+      function scratch(e) {
+        if (!isDrawing) return;
+        const { x, y } = getPosition(e);
+        ctx.beginPath();
+        ctx.arc(x, y, 20, 0, Math.PI * 2); // Circle radius = 20
+        ctx.fill();
+      }
+
+      // Stop drawing
+      function endScratch() {
+        isDrawing = false;
+      }
+
+      // Mouse Events
+      canvas.addEventListener('mousedown', startScratch);
+      canvas.addEventListener('mousemove', scratch);
+      canvas.addEventListener('mouseup', endScratch);
+      canvas.addEventListener('mouseleave', endScratch);
+
+      // Touch Events
+      canvas.addEventListener('touchstart', startScratch, { passive: false });
+      canvas.addEventListener('touchmove', scratch, { passive: false });
+      canvas.addEventListener('touchend', endScratch);
+    });
+  </script>
+</body>
+</html>
